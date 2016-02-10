@@ -1,7 +1,7 @@
 {
   "name": "atom-angular-material-snippets",
   "main": "./lib/atom-angular-material-snippets",
-  "version": "0.0.1",
+  "version": "0.0.2-0",
   "description": "Angular Material snippets for Atom",
   "keywords": [
     "Angular Material",
@@ -17,8 +17,7 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "readme": "# atom-angular-material-snippets package\n\nThis is a snippets package for Atom, providing snippets for Angular Material.\n",
   "readmeFilename": "README.md",
   "bugs": {
