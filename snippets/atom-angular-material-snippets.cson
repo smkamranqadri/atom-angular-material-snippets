@@ -1,6 +1,304 @@
 '.text.html':
+    'md-autocomplete':
+        'prefix': 'md-autocomplete'
+        'body': """
+            <md-autocomplete md-selected-item="${1:selectedItem}" md-search-text="${2:searchText}" md-items="${3:item in getMatches(searchText)}" md-item-text="${4:item.display}">
+              ${5:<md-item-template>
+              	${6:<span md-highlight-text="${7:searchText}">\{\{ ${8:item.display} \}\}</span>}
+              </md-item-template>}
+              ${9:<md-not-found>
+              	${10:No Matches Found.}
+              </md-not-found>}
+            </md-autocomplete>
+        """
     'md-button':
         'prefix': 'md-button'
         'body': """
-          <md-button ${1:class="${2:md-raised|md-fab|md-mini}"} ${3:href="${4:http://google.com}"} ${5:ng-disabled="${6:true|false}"} aria-label="${7:description}" ${8:md-no-ink="${9:true|false}"} ${10:md-ripple-size="${11:full|partial|auto}"}>${12:content}</md-button>
+            <md-button ${1:class="${2:md-raised|md-fab|md-mini}"} ${3:href="${4:http://google.com}"} ${5:ng-disabled="${6:true|false}"} aria-label="${7:description}" ${8:md-no-ink="${9:true|false}"} ${10:md-ripple-size="${11:full|partial|auto}"}>${12:content}</md-button>
+        """
+    'md-card':
+            'prefix': 'md-card'
+            'body': """
+                <md-card>
+                	${1:<img class="md-card-image" src="${2:card-image.png}" alt="${3:image caption}">}
+                	<md-card-content>
+                		<h2>${4:Card headline}</h2>
+                		<p>${5:Card content}</p>
+                	</md-card-content>
+                	${6:<md-card-footer>
+                	${7:Card footer}
+                	</md-card-footer>}
+                	${8:<div class="md-actions" layout="${9:row|column}" layout-align="${10:start|end|center} ${11:start|end|center}">
+                	   ${12:<md-button>${13:content}</md-button>}
+                	 </div>}
+                </md-card>
+            """
+    'md-checkbox':
+        'prefix': 'md-checkbox'
+        'body': """
+            <md-checkbox ${1:md-no-ink} ${2:ng-true-value="${3:expr}" ng-false-value="${4:expr}"} ng-model="${5:variable}" ${6:name="${7:string}"} ${8:ng-change="${9:expr}"} ${10:ng-disabled="${11:boolean}"} aria-label="${12:string}">
+            	${13:content}
+            </md-checkbox>
+        """
+    'md-chips':
+        'prefix': 'md-chips'
+        'body': """
+            <md-chips ${1:ng-model="${2:string|object}"} ${3:md-on-append="${4:expr}"} ${5:placeholder="${6:string}"} ${7:secondary-placeholder="${8:string}"} ${9:readonly="${10:boolean}"} ${11:md-on-remove="${12:expr}" ${13:md-on-select="${14:expr}"}} ${15:delete-hint="${16:string}" ${17:delete-button-label="${18:string}"}}>
+            	${19:<md-chip-template>
+            		${20:content}
+            	</md-chip-template>}
+            	${21:<button md-chip-remove class="${22:md-primary vegetablechip}">
+                	${23:<md-icon>close</md-icon>}
+              	</button>}
+              	${24:<md-chip>${25:content}</md-chip>}
+            </md-chips>
+        """
+    'md-contact-chips':
+        'prefix': 'md-contact-chips'
+        'body': """
+            <md-contact-chips ng-model="${1:variable}" md-contacts="${2:searchFunction}" md-contact-name="${3:string}" md-contact-image="${4:string}" md-contact-email="${5:string}" ${6:md-require-match="${7:boolean}" md-highlight-flags="${8:string}" filter-selected="${9:filterFunction}" placeholder="${10:string}"}>
+            </md-contact-chips>
+        """
+    'md-content':
+        'prefix': 'md-content'
+        'body': """
+            <md-content ${1:layout-padding} ${2:layout-wrap}>
+                ${3:Lorem ipsum dolor sit amet, ne quod novum mei}
+            </md-content>
+        """
+    'md-datepicker':
+        'prefix': 'md-datepicker'
+        'body': """
+            <md-datepicker ng-model="${1:variable}" ${2:ng-change="${3:expr}" md-min-date="${4:Date}" md-max-date="${5:Date}" disabled="${6:boolean}" required="${7:boolean}"}></md-datepicker>
+        """
+    'md-divider':
+        'prefix': 'md-divider'
+        'body': """
+            <md-divider ${1:md-inset}></md-divider>
+        """
+    'md-grid-list':
+        'prefix': 'md-grid-list'
+        'body': """
+            <md-grid-list md-cols="${1:number}" md-gutter="${2:string}" md-row-height="${3:string}" md-on-layout="${4:expr}">
+                ${5:<md-grid-tile>$6</md-grid-tile>}
+            </md-grid-list>
+        """
+    'md-grid-tile':
+        'prefix': 'md-grid-tile'
+        'body': """
+            <md-grid-tile ${1:md-colspan="${2:number}"} ${3:md-rowspan="${4:number}"}>
+            	${5:<md-grid-tile-header>
+            		${6:<h3>$7</h3>}
+            	</md-grid-tile-header>}
+              	${8:<md-grid-tile-footer>
+              		${9:<h3>$10</h3>}
+              	</md-grid-tile-footer>}
+            </md-grid-tile>
+        """
+    'md-highlight-text':
+        'prefix': 'md-highlight-text'
+        'body': """
+            <input ${1:placeholder="${2:Enter a search term...}"} ${3:ng-model="${4:searchTerm}"} type="${5:text}">
+            <ul>
+              <li md-highlight-text="${4:searchTerm}">$5</li>
+            </ul>
+        """
+    'md-icon-ligature':
+        'prefix': 'md-icon-ligature'
+        'body': """
+            <md-icon class="${1:material-icons step}" aria-label="${2:description}">${3:font-name}</md-icon>
+        """
+    'md-icon-svg':
+        'prefix': 'md-icon-svg'
+        'body': """
+            <md-icon md-svg-icon="${1:alarm}" style="${2:color: #0F0;}" aria-label="${3:Alarm Icon}"></md-icon>
+        """
+    'md-icon-url':
+        'prefix': 'md-icon-url'
+        'body': """
+            <md-icon class="${1:step img}" md-font-icon="${2:font.name}" aria-label="${3:description}"></md-icon>
+        """
+    'md-input-container':
+        'prefix': 'md-input-container'
+        'body': """
+            <md-input-container>
+            	${1:<label>${2:Username}</label>
+            	<input type="text" ${3:ng-model="${4:user.name}"}>}
+            </md-input-container>
+        """
+    'md-input':
+        'prefix': 'md-input'
+        'body': """
+            <label>$1</label>
+            <input name="$2" ng-model="$3" placeholder="$4" required md-maxlength="$5" minlength="$6">
+        """
+    'md-list-item':
+        'prefix': 'md-list-item'
+        'body': """
+            <md-list-item class="md-2-line" ng-repeat="$1">
+              $2
+            </md-list-item>
+        """
+    'md-list':
+        'prefix': 'md-list'
+        'body': """
+            <md-list>
+              $1
+            </md-list>
+        """
+    'md-menu':
+        'prefix': 'md-menu'
+        'body': """
+            <md-menu md-offset="0 0">
+                <!-- Trigger element is a md-button with an icon -->
+                <md-button ng-click="$mdOpenMenu()" class="md-icon-button" aria-label="Open sample menu">
+                    <md-icon md-svg-icon="call:phone"></md-icon>
+                </md-button>
+                <md-menu-content>
+                    <md-menu-item><md-button ng-click="doSomething()">Do Something</md-button></md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        """
+    'md-progress-circular':
+        'prefix': 'md-progress-circular'
+        'body': """
+            <md-progress-circular md-mode="determinate" value="$1" ng-value="$2" md-diameter="48"></md-progress-circular>
+            <!--For operations where the user is asked to wait a moment while something finishes up, and it’s not necessary to expose what's happening behind the scenes and how long it will take, use an md-mode="indeterminate" indicator.-->
+        """
+    'md-radio-button':
+        'prefix': 'md-radio-button'
+        'body': """
+            <md-radio-button ng-model="$1" ng-value="$2" aria-label="$3">$4</md-radio-button>
+        """
+    'md-select':
+        'prefix': 'md-select'
+        'body': """
+            <md-select ng-model="$1"> <!--md-on-close: expression; multiple:boolean; placeholder: string;-->
+                <md-select-label>Select a state</md-select-label>
+                <md-option ng-value="opt" ng-repeat="opt in options">{{ opt }}</md-option>
+            </md-select>
+        """
+    'md-sidenav':
+        'prefix': 'md-sidenav'
+        'body': """
+            <div layout="row" ng-controller="MyController">
+                <md-sidenav md-component-id="left" class="md-sidenav-left">
+                    Left Nav!
+                </md-sidenav>
+                <md-content>
+                    Center Content
+                    <md-button ng-click="openLeftMenu()">
+                        Open Left Menu
+                    </md-button>
+                </md-content>
+                <md-sidenav md-component-id="right" md-is-locked-open="$mdMedia('min-width: 333px')" class="md-sidenav-right">
+                    <form>
+                        <md-input-container>
+                            <label for="testInput">Test input</label>
+                            <input id="testInput" type="text" ng-model="data" md-sidenav-focus>
+                        </md-input-container>
+                    </form>
+                </md-sidenav>
+            </div>
+        """
+    'md-subheader':
+        'prefix': 'md-subheader'
+        'body': """
+            <md-subheader>$1</md-subheader>
+            <!--You can use md-no-sticky class-->
+        """
+    'md-slider':
+        'prefix': 'md-slider'
+        'body': """
+            <md-slider md-discrete ng-model="myDiscreteValue" step="$1" min="$2" max="$3"></md-slider>
+        """
+    'md-swipe-left':
+        'prefix': 'md-swipe-left'
+        'body': """
+            <div md-swipe-left="onSwipeLeft()">$1</div>
+        """
+    'md-swipe-right':
+        'prefix': 'md-swipe-right'
+        'body': """
+            <div md-swipe-right="onSwipeRight()">$1</div>
+        """
+    'md-switch':
+        'prefix': 'md-switch'
+        'body': """
+            <md-switch ng-model="$1" aria-label="$2">
+                $3
+            </md-switch>
+        """
+    'md-tab':
+        'prefix': 'md-tab'
+        'body': """
+            <md-tab label="" disabled md-on-select="" md-on-deselect="">
+                <md-tab-label>
+                    <h3>$1</h3>
+                </md-tab-label>
+                <md-tab-body>
+                    <p>
+                        $2
+                    </p>
+                </md-tab-body>
+            </md-tab>
+        """
+    'md-tabs':
+        'prefix': 'md-tabs'
+        'body': """
+            <md-tabs md-selected="selectedIndexInteger">
+                $1
+            </md-tabs>
+            <!-- md-tabs attributes you can use:
+            md-selected - integer - Index of the active/selected tab
+            md-no-ink - boolean - If present, disables ink ripple effects.
+            md-no-bar - boolean -If present, disables the selection ink bar.
+            md-align-tabs string - Attribute to indicate position of tab buttons: bottom or top; default is top
+            md-stretch-tabs string - Attribute to indicate whether or not to stretch tabs: auto, always, or never; default is auto
+            md-dynamic-height - boolean - When enabled, the tab wrapper will resize based on the contents of the selected tab
+            md-center-tabs - boolean - When enabled, tabs will be centered provided there is no need for pagination
+            md-no-pagination - boolean - When enabled, pagination will remain off
+            md-swipe-content - boolean - When enabled, swipe gestures will be enabled for the content area to jump between tabs
+            md-no-disconnect - boolean - If your tab content has background tasks (ie. event listeners), you will want to include this to prevent the scope from being disconnected
+            md-autoselect - boolean - When present, any tabs added after the initial load will be automatically selected
+            -->
+        """
+    'md-toolbar':
+        'prefix': 'md-toolbar'
+        'body': """
+            <div layout="column" layout-fill>
+                <md-toolbar md-scroll-shrink md-shrink-speed-factor="0.5">
+                 	<md-button class="md-icon-button" aria-label="Settings">
+                        <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+                    </md-button>
+                    <h2>
+                      <span>Toolbar with Icon Buttons</span>
+                    </h2>
+                    <span flex></span>
+                    <md-button class="md-icon-button" aria-label="Favorite">
+                        <md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="More">
+                        <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+                    </md-button>
+                </md-toolbar>
+                <!--Note: for scrollShrink to work, the toolbar must be a sibling of a md-content element, placed before it.-->
+                <md-content>
+                    Hello!
+                </md-content>
+            </div>
+        """
+    'md-tooltip':
+        'prefix': 'md-tooltip'
+        'body': """
+            <md-tooltip md-visible="true" md-delay="400" md-direction="bottom" md-autohide="true">
+                $1
+            </md-tooltip>
+        """
+    'md-whiteframe':
+        'prefix': 'md-whiteframe'
+        'body': """
+            <md-whiteframe class="md-whiteframe-z1" layout layout-align="center center">
+                $1
+            </md-whiteframe>
         """
