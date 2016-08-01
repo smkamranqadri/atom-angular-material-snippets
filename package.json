@@ -1,7 +1,7 @@
 {
   "name": "atom-angular-material-snippets",
   "main": "./lib/atom-angular-material-snippets",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Angular Material snippets for Atom",
   "keywords": [
     "Angular Material",
