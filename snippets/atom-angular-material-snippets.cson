@@ -1,4 +1,4 @@
-'.source.html':
+'.text.html':
     'md-autocomplete':
         'prefix': 'md-autocomplete'
         'body': """
